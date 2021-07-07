@@ -4,12 +4,18 @@ import pandas as pd
 import os
 
 os.chdir('..')
-states = os.path.join('geo_data','mexican_states.json')
+
+"""
 confirmed_cases_data = os.path.join('geo_data','MX_Confirmed.csv')
 death_cases_data = os.path.join('geo_data','MX_Deaths.csv')
 
 state_data = pd.read_csv(confirmed_cases_data)
 state_data_2 = pd.read_csv(death_cases_data)
+"""
+
+states = os.path.join('geo_data','mexican_states.json')
+precio_medio_rural_del_cafe_cereza_en_mexico = os.path.join('data','precio-medio-rural-del-cafe-cereza-en-mexico.csv')
+state_data = pd.read_csv(precio_medio_rural_del_cafe_cereza_en_mexico)
 
 # Map
 m = folium.Map(location=[23.634501, -102.552784], zoom_start=5)
@@ -48,32 +54,19 @@ ver = [19.434722, -96.383056]
 yuc = [20.833333, -89]
 zac = [23.292778, -102.700556]
 
-conf = folium.features.Choropleth(
+precio = folium.features.Choropleth(
             geo_data=states,
-            name='Confirmed cases',
+            name='precio',
             data=state_data,
             columns=['State','Confirmed'],
             key_on='feature.id',
             fill_color='Reds',
             fill_opacity=0.7,
             line_opacity=0.2,
-            legend_name='\% of accumulated confirmed cases by state',
+            legend_name='MXN por tonelada de café',
             )
 
-dea = folium.features.Choropleth(
-            geo_data=states,
-            name='Deaths',
-            data=state_data_2,
-            columns=['State','Deaths'],
-            key_on='feature.id',
-            fill_color='Greys',
-            fill_opacity=0.7,
-            line_opacity=0.2,
-            legend_name='\% of accumulated deaths by state',
-            show=False,
-            )
-m.add_child(conf)
-m.add_child(dea)
+m.add_child(precio)
 
 folium.LayerControl().add_to(m)
 
