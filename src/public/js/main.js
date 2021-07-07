@@ -1,3 +1,4 @@
 function displayText() {
-    console.log("Holi");
+    console.log("Hello There!");
 }
+module.exports.displayText= displayText();
