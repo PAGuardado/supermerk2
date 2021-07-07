@@ -5,14 +5,6 @@ import os
 
 os.chdir('..')
 
-"""
-confirmed_cases_data = os.path.join('geo_data','MX_Confirmed.csv')
-death_cases_data = os.path.join('geo_data','MX_Deaths.csv')
-
-state_data = pd.read_csv(confirmed_cases_data)
-state_data_2 = pd.read_csv(death_cases_data)
-"""
-
 states = os.path.join('geo_data','mexican_states.json')
 precio_medio_rural_del_cafe_cereza_en_mexico = os.path.join('data','precio-medio-rural-del-cafe-cereza-en-mexico.csv')
 state_data = pd.read_csv(precio_medio_rural_del_cafe_cereza_en_mexico)
@@ -60,9 +52,12 @@ precio = folium.features.Choropleth(
             data=state_data,
             columns=['State','1999'],
             key_on='feature.id',
-            fill_color='Reds',
+            fill_color='Greens',
+            nan_fill_color='none',
             fill_opacity=0.7,
             line_opacity=0.2,
+            Highlight=True,
+            show=True,
             legend_name='MXN por tonelada de café',
             )
 
@@ -73,6 +68,7 @@ folium.LayerControl().add_to(m)
 os.chdir('html')
 tooltip = 'Da clic!'
 
+"""
 # Markers
 folium.Marker(agu, popup='AGU<br><iframe src="aguascalientes_fig.html" title="Gráfica de Datos - Aguascalientes" width="840" height="530"></iframe>', tooltip=tooltip, icon=folium.Icon(color='lightred', icon='info-sign')).add_to(m)
 folium.Marker(bcn, popup='BCN<br><iframe src="baja california_fig.html" title="Gráfica de Datos - Baja California" width="840" height="530"></iframe>', tooltip=tooltip, icon=folium.Icon(color='lightred', icon='info-sign')).add_to(m)
@@ -106,6 +102,8 @@ folium.Marker(tla, popup='TLA<br><iframe src="tlaxcala_fig.html" title="Gráfica
 folium.Marker(ver, popup='VER<br><iframe src="veracruz_fig.html" title="Gráfica de Datos - Veracruz" width="840" height="530"></iframe>', tooltip=tooltip, icon=folium.Icon(color='darkred', icon='info-sign')).add_to(m)
 folium.Marker(yuc, popup='YUC<br><iframe src="yucatan_fig.html" title="Gráfica de Datos - Yucatan" width="840" height="530"></iframe>', tooltip=tooltip, icon=folium.Icon(color='lightred', icon='info-sign')).add_to(m)
 folium.Marker(zac, popup='ZAC<br><iframe src="zacatecas_fig.html" title="Gráfica de Datos - Zacatecas" width="840" height="530"></iframe>', tooltip=tooltip, icon=folium.Icon(color='lightred', icon='info-sign')).add_to(m)
+"""
+
 
 # Generate map
 m.save('map_mex_choropleth.html')
