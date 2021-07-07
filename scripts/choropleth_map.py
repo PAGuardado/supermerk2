@@ -68,6 +68,22 @@ folium.LayerControl().add_to(m)
 os.chdir('html')
 tooltip = 'Da clic!'
 
+folium.Marker(chp, popup='CHP<br><iframe src="chiapas_fig.html" title="Gráfica de Datos - Chiapas" width="840" height="530"></iframe>', tooltip=tooltip, icon=folium.Icon(color='lightred', icon='info-sign')).add_to(m)
+folium.Marker(col, popup='COL<br><iframe src="colima_fig.html" title="Gráfica de Datos - Colima" width="840" height="530"></iframe>', tooltip=tooltip, icon=folium.Icon(color='lightred', icon='info-sign')).add_to(m)
+folium.Marker(gro, popup='GRO<br><iframe src="guerrero_fig.html" title="Gráfica de Datos - Guerrero" width="840" height="530"></iframe>', tooltip=tooltip, icon=folium.Icon(color='lightred', icon='info-sign')).add_to(m)
+folium.Marker(hid, popup='HID<br><iframe src="hidalgo_fig.html" title="Gráfica de Datos - Hidalgo" width="840" height="530"></iframe>', tooltip=tooltip, icon=folium.Icon(color='lightred', icon='info-sign')).add_to(m)
+folium.Marker(jal, popup='JAL<br><iframe src="jalisco_fig.html" title="Gráfica de Datos - Jalisco" width="840" height="530"></iframe>', tooltip=tooltip, icon=folium.Icon(color='lightred', icon='info-sign')).add_to(m)
+folium.Marker(mic, popup='MIC<br><iframe src="michoacan_fig.html" title="Gráfica de Datos - Michoacan" width="840" height="530"></iframe>', tooltip=tooltip, icon=folium.Icon(color='lightred', icon='info-sign')).add_to(m)
+folium.Marker(mor, popup='MOR<br><iframe src="morelos_fig.html" title="Gráfica de Datos - Morelos" width="840" height="530"></iframe>', tooltip=tooltip, icon=folium.Icon(color='lightred', icon='info-sign')).add_to(m)
+folium.Marker(nay, popup='NAY<br><iframe src="nayarit_fig.html" title="Gráfica de Datos - Nayarit" width="840" height="530"></iframe>', tooltip=tooltip, icon=folium.Icon(color='lightred', icon='info-sign')).add_to(m)
+folium.Marker(oax, popup='OAX<br><iframe src="oaxaca_fig.html" title="Gráfica de Datos - Oaxaca" width="840" height="530"></iframe>', tooltip=tooltip, icon=folium.Icon(color='lightred', icon='info-sign')).add_to(m)
+folium.Marker(pue, popup='PUE<br><iframe src="puebla_fig.html" title="Gráfica de Datos - Puebla" width="840" height="530"></iframe>', tooltip=tooltip, icon=folium.Icon(color='darkred', icon='info-sign')).add_to(m)
+folium.Marker(slp, popup='SLP<br><iframe src="san luis potosi_fig.html" title="Gráfica de Datos - San luis potosi" width="840" height="530"></iframe>', tooltip=tooltip, icon=folium.Icon(color='lightred', icon='info-sign')).add_to(m)
+folium.Marker(tab, popup='TAB<br><iframe src="tabasco_fig.html" title="Gráfica de Datos - Tabasco" width="840" height="530"></iframe>', tooltip=tooltip, icon=folium.Icon(color='darkred', icon='info-sign')).add_to(m)
+folium.Marker(ver, popup='VER<br><iframe src="veracruz_fig.html" title="Gráfica de Datos - Veracruz" width="840" height="530"></iframe>', tooltip=tooltip, icon=folium.Icon(color='darkred', icon='info-sign')).add_to(m)
+
+
+
 """
 # Markers
 folium.Marker(agu, popup='AGU<br><iframe src="aguascalientes_fig.html" title="Gráfica de Datos - Aguascalientes" width="840" height="530"></iframe>', tooltip=tooltip, icon=folium.Icon(color='lightred', icon='info-sign')).add_to(m)
