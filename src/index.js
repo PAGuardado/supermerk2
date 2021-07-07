@@ -25,6 +25,7 @@ app.listen(app.get('port'), () => {
 //-------------------EDIT---------------------------
 
 const { QueueClient, QueueServiceClient } = require("@azure/storage-queue");
+const { strict } = require('assert');
 
 // Retrieve the connection from an environment
 // variable called AZURE_STORAGE_CONNECTION_STRING
@@ -44,15 +45,15 @@ const queueServiceClient = QueueServiceClient.fromConnectionString(connectionStr
 const queueClient = queueServiceClient.getQueueClient(queueName);
 
 
-
-messageText = "estuvo excelente Manuel";
-console.log("Adding message to the queue: ", messageText);
+//Message to Send
+messageText = "Quedo mamalon";
+let queueMessage = Buffer.from(messageText).toString('base64');
 
 // Add a message to the queue
 const response = async () => {
     try
     {
-      await queueClient.sendMessage(messageText);
+      await queueClient.sendMessage(queueMessage);
     }
     catch (error) {
       console.error(error);
