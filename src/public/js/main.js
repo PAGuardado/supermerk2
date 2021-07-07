@@ -1,1 +1,3 @@
-alert("Holi");
+function displayText() {
+    console.log("Holi");
+}
