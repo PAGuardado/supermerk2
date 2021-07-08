@@ -1,4 +1,3 @@
 # supermerk2
-### en las distintas ramamas encontrarás los componentes que conforman esta aplicación
-
 ![nuestro equipo](https://github.com/PAGuardado/supermerk2/blob/main/nuestro%20equipo.jpg)
+### en las distintas ramas de este repositorio podrás explorar los componentes que conforman nuestra aplicación
